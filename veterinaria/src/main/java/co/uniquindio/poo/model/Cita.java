@@ -23,10 +23,10 @@ public class Cita {
         boolean centinela = false;
         for(Mascota mas: listMascotas){
             if(mas.getId()==(mascota.getId())){
-                centinela = true; //ya existe un estudiante
+                centinela = true;
             }
         }
-        return centinela; //No existe el estudiante con la mismo ID
+        return centinela;
     }
 
 
