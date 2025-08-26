@@ -1,17 +1,36 @@
 package co.uniquindio.poo;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import co.uniquindio.poo.model.Mascota;
+import co.uniquindio.poo.model.Cita;
+import co.uniquindio.poo.model.Veterinario;
+import co.uniquindio.poo.model.Propietario;
+
+import java.time.LocalDateTime;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    Veterinario veterinario = new Veterinario("juan","123");
+    Veterinario veterinario2 = new Veterinario("pato","1233");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    Propietario propietario = new Propietario("Jose","222","1213131","jchwiheidhwi");
+    Propietario propietario1 = new Propietario("luis","3231","1323313","ajsdjadaj");
+
+    LocalDateTime fecha1 = LocalDateTime.of(2025,9,15,11,40);
+    Cita cita1 = new Cita("Sagrada fa",fecha1,1009);
+    cita1.agregarVeterinario(veterinario);
+
+    LocalDateTime fecha2 = LocalDateTime.of(2025,9,15,12,40);
+    Cita cita2 = new Cita("Sagrada fa",fecha2,1008);
+    cita2.agregarVeterinario(veterinario2);
+
+    Mascota mascota = new Mascota("farruko","gato",5,3,propietario);
+    Mascota mascota1 = new Mascota("farruko","gato",5,3,propietario1);
+
+    cita1.agregarMascotaCita(mascota);
+    cita2.agregarMascotaCita(mascota1);
+
+    System.out.println(cita1.toString());
+    System.out.println(cita2.toString());
+
     }
 }
