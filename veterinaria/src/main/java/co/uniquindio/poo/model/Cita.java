@@ -1,7 +1,6 @@
 package co.uniquindio.poo.model;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -12,11 +11,12 @@ public class Cita {
     private List<Mascota> listMascotas;
     private Veterinario veterinario;
 
-    public Cita(String lugar, LocalDateTime fecha, int id) {
+    public Cita(String lugar, LocalDateTime fecha, int id, Veterinario veterinario) {
         this.lugar = lugar;
         this.fecha = fecha;
         this.id = id;
         this.listMascotas = new ArrayList<>();
+        this.veterinario= veterinario;
 
     }
     public boolean verificarMascota(Mascota mascota){
@@ -39,18 +39,13 @@ public class Cita {
         }
     }
 
-    public void agregarVeterinario(Veterinario veterinario){
-        this.veterinario = veterinario;
-    }
-
     @Override
     public String toString() {
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         return "Cita{" +
                 "lugar='" + lugar + '\'' +
-                ", fecha=" + fecha.format(formato) +
+                ", fecha=" + fecha +
                 ", id=" + id +
-                ", mascotas=" + listMascotas +
+                ", listMascotas=" + listMascotas +
                 ", veterinario=" + veterinario +
                 '}';
     }

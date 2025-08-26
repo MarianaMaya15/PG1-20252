@@ -16,14 +16,14 @@ public class Main {
     Propietario propietario1 = new Propietario("luis","3231","1323313","ajsdjadaj");
 
     LocalDateTime fecha1 = LocalDateTime.of(2025,9,15,11,40);
-    Cita cita1 = new Cita("Sagrada fa",fecha1,1009);
-    cita1.agregarVeterinario(veterinario);
+    Cita cita1 = new Cita("Sagrada fa",fecha1,1009,veterinario);
+
 
     LocalDateTime fecha2 = LocalDateTime.of(2025,9,15,12,40);
-    Cita cita2 = new Cita("Sagrada fa",fecha2,1008);
-    cita2.agregarVeterinario(veterinario2);
+    Cita cita2 = new Cita("Sagrada fa",fecha2,1008,veterinario2);
 
-    Mascota mascota = new Mascota("farruko","gato",5,3,propietario);
+
+    Mascota mascota = new Mascota("farruko","gato",5 ,3,propietario);
     Mascota mascota1 = new Mascota("farruko","gato",5,3,propietario1);
 
     cita1.agregarMascotaCita(mascota);
