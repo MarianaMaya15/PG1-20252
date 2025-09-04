@@ -5,18 +5,16 @@ import java.util.ArrayList;
 public class Mecanico {
     private String nombre;
     private String cedula;
-    private String telefono;
     private ArrayList<Orden> listaOrdenes;
 
-    public Mecanico(String nombre, String cedula, String telefono) {
+    public Mecanico(String nombre, String cedula) {
         this.nombre = nombre;
         this.cedula = cedula;
-        this.telefono = telefono;
         this.listaOrdenes = new ArrayList<>();
 
     }
 
-    public void asignarOrden(Orden orden) {listaOrdenes.add(orden);}
+    public void registrarOrden(Orden orden) {listaOrdenes.add(orden);}
 
     public void actualizarEstadoOrden(String estado, int id){
         for (Orden ord : listaOrdenes){
@@ -37,8 +35,7 @@ public class Mecanico {
         return "Mecanico{" +
                 "nombre='" + nombre + '\'' +
                 ", cedula='" + cedula + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", listOrdendeServicioMecanico=" + listaOrdenes +
+                ", listOrdenes=" + listaOrdenes +
                 '}';
     }
     public String getCedula() {

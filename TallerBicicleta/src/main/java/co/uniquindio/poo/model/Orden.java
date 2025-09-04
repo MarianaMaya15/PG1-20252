@@ -61,7 +61,7 @@ public class Orden {
                 ", descripcion='" + descripcion + '\'' +
                 ", estado='" + estado + '\'' +
                 ", bicicleta=" + bicicleta +
-                ", mecanicoAsignado=" + mecanicoAsignado +
+                ", mecanicoAsignado=" + mecanicoAsignado.getNombre() +
                 ", manoDeObra=" + manoDeObra +
                 ", tareas=" + tareas +
                 ", repuestosUsados=" + repuestosUsados +

@@ -20,7 +20,7 @@ public class Bicicleta {
         this.marca = marca;
     }
 
-    public  void  asignarOrden(Orden orden){
+    public  void  registrarOrden(Orden orden){
         listaOrdenes.add(orden);
     }
 

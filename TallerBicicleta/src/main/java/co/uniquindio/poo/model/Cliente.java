@@ -1,21 +1,22 @@
 package co.uniquindio.poo.model;
 
+
 import java.util.ArrayList;
 
 public class Cliente {
     private String nombre;
     private String cedula;
-    private int telefono;
+    private String telefono;
     private ArrayList<Bicicleta> listaBicicletas;
 
-    public Cliente(String nombre, String cedula, int telefono) {
+    public Cliente(String nombre, String cedula, String telefono) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.telefono = telefono;
         this.listaBicicletas = new ArrayList<>();
 
     }
-    public void asignarBicicletaPropietario(Bicicleta bicicleta){listaBicicletas.add(bicicleta);}
+    public void registrarBicicleta(Bicicleta bicicleta){listaBicicletas.add(bicicleta);}
 
     @Override
     public String toString() {
@@ -23,7 +24,7 @@ public class Cliente {
                 "nombre='" + nombre + '\'' +
                 ", cedula='" + cedula + '\'' +
                 ", telefono=" + telefono +
-                ", listBicicletasCliente=" + listaBicicletas +
+                ", listaBicicletas=" + listaBicicletas +
                 '}';
     }
     public String getCedula(String cedula) {return cedula;}
@@ -47,11 +48,11 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 }
