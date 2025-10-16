@@ -1,8 +1,6 @@
 package co.uniquindio.poo;
 
-import co.uniquindio.poo.model.ClinicaVeterinaria;
-import co.uniquindio.poo.model.Propietario;
-import co.uniquindio.poo.model.Veterinario;
+import co.uniquindio.poo.model.*;
 
 import java.util.Scanner;
 
@@ -82,14 +80,57 @@ public class Main {
 
     public static void registrarMascota(ClinicaVeterinaria clinicaVeterinaria){
 
+        System.out.println("Ingrese el nombre de la mascota: ");
+        String nombre = scanner.nextLine().trim();
+
+        System.out.println("Ingrese la raza de la mascota: ");
+        String raza = scanner.nextLine().trim();
+
+        System.out.println("Ingrese el Id de la mascota: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Ingrese la cedula del propietario: ");
+        String cedula = scanner.nextLine().trim();
+        Propietario propietario = clinicaVeterinaria.buscarPropietarioPorCedula(cedula);
+
+
+        Mascota mascota = new Mascota(nombre,raza,id,propietario);
+
+        clinicaVeterinaria.registrarMascota(mascota);
+        System.out.println("Mascota registrada - OK");
     }
 
     public static void asignarCita(ClinicaVeterinaria clinicaVeterinaria){
+        System.out.println("Ingrese la fecha de la cita: ");
+        String fecha = scanner.nextLine().trim();
+
+        System.out.println("Ingrese la hora de la cita: ");
+        String hora = scanner.nextLine().trim();
+
+        System.out.println("Ingrese el Id de la mascota: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        Mascota mascota = clinicaVeterinaria.buscarMascotaPorId(id);
+
+        System.out.println("Ingrese la cedula del veterinario: ");
+        String cedula = scanner.nextLine().trim();
+        Veterinario veterinario = clinicaVeterinaria.buscarVeterinarioPorCedula(cedula);
+
+
+        Cita cita = new Cita(fecha,hora,mascota,veterinario);
+
+        clinicaVeterinaria.asignarCita(cita);
+        System.out.println("Cita registrada - OK");
 
     }
 
     public static void mostrarCita(ClinicaVeterinaria clinicaVeterinaria){
 
+        for (Cita cita : clinicaVeterinaria.getListCitas()){
+            System.out.println(cita.toString());
+        }
 
     }
 }
